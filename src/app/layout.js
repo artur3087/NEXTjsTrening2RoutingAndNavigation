@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";  // It is important to import it here from NEXT, not REACT //
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <h1> EVERY PAGE WILL HAVE THIS THING HERE, DUDE!</h1> {/* This was added now to show how it works */}
+      <nav>
+        <Link href = "/">HOME</Link>
+        <Link href = "/About">ABOUT</Link>
+       < Link href = "/Contact">CONTACT</Link>
+       <Link href = "/Posts">POSTS</Link>
+      </nav>
+      {children}</body>
     </html>
   );
 }
